@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BlingFireNuget" Version="0.1.9-private" />
+    <PackageReference Include="BlingFireNuget" Version="0.1.8" />
   </ItemGroup>
 
 </Project>
