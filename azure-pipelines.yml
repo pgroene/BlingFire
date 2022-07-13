@@ -329,43 +329,85 @@ jobs:
         displayName: 'Download Build Artifacts for windows x64'
         inputs:
           artifactName: $(win_X64_Artifact)
-          itemPattern: '*.*'
           downloadPath: 'nuget/lib/runtimes/win-x64/native'
+      
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: 'nuget/lib/runtimes/win-x64/native/$(win_X64_Artifact)'
+          Contents: '**'
+          TargetFolder: 'nuget/lib/runtimes/win-x64/native'
+          OverWrite: true
+          flattenFolders: true
       
       - task: DownloadBuildArtifacts@0
         displayName: 'Download Build Artifacts for windows arm64'
         inputs:
           artifactName: $(win_Arm64_Artifact)
-          itemPattern: '*.*'
           downloadPath: 'nuget/lib/runtimes/win-arm64/native'
+      
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: 'nuget/lib/runtimes/win-arm64/native/$(win_Arm64_Artifact)'
+          Contents: '**'
+          TargetFolder: 'nuget/lib/runtimes/win-arm64/native'
+          OverWrite: true
+          flattenFolders: true
       
       - task: DownloadBuildArtifacts@0
         displayName: 'Download Build Artifacts for osx x64'
         inputs:
           artifactName: $(osx_X64_Artifact)
-          itemPattern: '*.*'
           downloadPath: 'nuget/lib/runtimes/osx-x64/native'
+      
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: 'nuget/lib/runtimes/osx-x64/native/$(osx_X64_Artifact)'
+          Contents: '**'
+          TargetFolder: 'nuget/lib/runtimes/osx-x64/native'
+          OverWrite: true
+          flattenFolders: true
       
       - task: DownloadBuildArtifacts@0
         displayName: 'Download Build Artifacts for osx arm64'
         inputs:
           artifactName: $(osx_Arm64_Artifact)
-          itemPattern: '*.*'
           downloadPath: 'nuget/lib/runtimes/osx-arm64/native'
+      
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: 'nuget/lib/runtimes/osx-arm64/native/$(osx_Arm64_Artifact)'
+          Contents: '**'
+          TargetFolder: 'nuget/lib/runtimes/osx-arm64/native'
+          OverWrite: true
+          flattenFolders: true
       
       - task: DownloadBuildArtifacts@0
         displayName: 'Download Build Artifacts for linux x64'
         inputs:
           artifactName: $(linux_X64_Artifact)
-          itemPattern: '*.*'
           downloadPath: 'nuget/lib/runtimes/linux-x64/native'
+      
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: 'nuget/lib/runtimes/linux-x64/native/$(linux_X64_Artifact)'
+          Contents: '**'
+          TargetFolder: 'nuget/lib/runtimes/linux-x64/native'
+          OverWrite: true
+          flattenFolders: true
       
       - task: DownloadBuildArtifacts@0
         displayName: 'Download Build Artifacts for linux Arm64'
         inputs:
           artifactName: $(linux_Arm64_Artifact)
-          itemPattern: '*.*'
           downloadPath: 'nuget/lib/runtimes/linux-arm64/native'
+      
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: 'nuget/lib/runtimes/linux-arm64/native/$(linux_Arm64_Artifact)'
+          Contents: '**'
+          TargetFolder: 'nuget/lib/runtimes/linux-arm64/native'
+          OverWrite: true
+          flattenFolders: true
 
       - task: DotNetCoreCLI@2
         inputs:
