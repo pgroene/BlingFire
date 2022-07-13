@@ -58,6 +58,13 @@ jobs:
           Contents: $(windowsDllName)
           TargetFolder: '$(build.artifactstagingdirectory)/native'
       
+      - task: CopyFiles@2
+        displayName: 'Copy blingfiretokdll.pdb to: $(Build.ArtifactStagingDirectory)'
+        inputs:
+          SourceFolder: 'Release/Release'
+          Contents: "blingfiretokdll.pdb"
+          TargetFolder: '$(build.artifactstagingdirectory)/native'
+      
       - task: PublishBuildArtifacts@1
         displayName: 'Publish Artifact: blingfiretokdll.dll'
         inputs:
@@ -98,6 +105,13 @@ jobs:
         inputs:
           SourceFolder: 'Release/Release'
           Contents: $(windowsDllName)
+          TargetFolder: '$(build.artifactstagingdirectory)/native'
+      
+      - task: CopyFiles@2
+        displayName: 'Copy blingfiretokdll.pdb to: $(Build.ArtifactStagingDirectory)'
+        inputs:
+          SourceFolder: 'Release/Release'
+          Contents: "blingfiretokdll.pdb"
           TargetFolder: '$(build.artifactstagingdirectory)/native'
       
       - task: PublishBuildArtifacts@1
