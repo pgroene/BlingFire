@@ -286,6 +286,12 @@ jobs:
             sudo apt-get install -y gcc-aarch64-linux-gnu
             sudo apt-get install -y g++-aarch64-linux-gnu
 
+      - task: CmdLine@2
+        displayName: Look for compiler present on build agent  
+        inputs:
+          script: |
+            ls /usr/bin/aarch64*
+
       - task: CMake@1
         displayName: 'CMake'
         inputs:
