@@ -17,6 +17,9 @@ ELSE()
 ENDIF()
 
 IF (WIN32 AND MSVC)
+  # Add /Qspectre flag
+  add_compile_options("/Qspectre")
+
   set (CMAKE_CXX_FLAGS " -DNDEBUG")
   set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
   set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF /profile")
