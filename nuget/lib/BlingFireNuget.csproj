@@ -14,8 +14,8 @@
     <PackageReleaseNotes>BlingFire wrapper for .Net Core, see https://github.com/microsoft/BlingFire for details.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.12-private</Version>
-    <FileVersion>0.1.12-private</FileVersion>
+    <Version>0.1.13-private</Version>
+    <FileVersion>0.1.13-private</FileVersion>
     <IsPackable>true</IsPackable>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>contentFiles</ContentTargetFolders>
